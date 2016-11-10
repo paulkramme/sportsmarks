@@ -15,5 +15,6 @@ def main():
 		f.write(name + " hits=" + str(hits) + " on distance=" + str(distance) + " equals final mark " + str(finalmark) + '\n')
 	print("End program.")
 
+
 if __name__ == __name__:
 	main()
