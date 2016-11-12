@@ -7,6 +7,7 @@ def mark(hits, distance):
 
 
 def main():
+	finalmark = 0
 	hits = 0
 	name = input("Name? ")
 	for i in range(5):
@@ -16,7 +17,7 @@ def main():
 			finalmark = mark(hits, distance)
 			hits = hits + 1
 	with open("marklist.csv", "a") as f:
-		f.write(name + " hits=" + str(hits) + " on distance=" + str(distance) + " equals final mark " + str(finalmark) + '\n')
+		f.write(name + "," + str(hits) + "," + str(finalmark) + '\n')
 	print("End program.")
 
 
