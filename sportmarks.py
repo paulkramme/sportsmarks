@@ -24,13 +24,15 @@ def main():
 		hit = input("Getroffen? ")
 		if hit == "y" or hits == "ja":
 			distance = int(input("Entfernung zum Korb? "))
-			finalmark = mark(hits, distance)
+			#finalmark = mark(hits, distance)
 			hits = hits + 1
+			finalmark = mark(hits, distance)
 			i = i + 1
 		elif hit == "n" or hits == "nein":
 			i = i + 1
 		else:
 			print("Please state 'y' or 'n' or 'ja' or 'nein'.")
+		print(hits)
 	exists()
 	with open("marklist.csv", "a") as f:
 		f.write(name + "," + str(hits) + "," + str(finalmark) + '\n')
