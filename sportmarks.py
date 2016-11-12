@@ -2,6 +2,7 @@
 
 
 def mark(hits, distance):
+	#THINK
 	points = hits * 3
 	return points
 
@@ -14,6 +15,7 @@ def exists():
 		f = open("marklist.csv", "w")
 		f.write("name,hits,mark_in_punkten\n")
 
+
 def main():
 	finalmark = 0
 	hits = 0
@@ -24,7 +26,6 @@ def main():
 		hit = input("Getroffen? ")
 		if hit == "y" or hits == "ja":
 			distance = int(input("Entfernung zum Korb? "))
-			#finalmark = mark(hits, distance)
 			hits = hits + 1
 			finalmark = mark(hits, distance)
 			i = i + 1
