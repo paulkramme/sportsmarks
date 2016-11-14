@@ -2,17 +2,41 @@
 
 
 def mark(hits, distance):
+	#THINK
 	points = hits * 3
 	return points
 
 
+def exists():
+	try:
+		f = open("marklist.csv", "r")
+		f.close()
+	except FileNotFoundError:
+		f = open("marklist.csv", "w")
+		f.write("name,hits,mark_in_punkten\n")
+
+
 def main():
+	finalmark = 0
+	hits = 0
+	throw_count = 5
+	i = 1
 	name = input("Name? ")
-	hits = int(input("Anzahl getroffen? "))
-	distance = int(input("Entfernung zum Korb? "))
-	finalmark = mark(hits, distance)
+	while i <= throw_count:
+		hit = input("Getroffen? ")
+		if hit == "y" or hits == "ja":
+			distance = int(input("Entfernung zum Korb? "))
+			hits = hits + 1
+			finalmark = mark(hits, distance)
+			i = i + 1
+		elif hit == "n" or hits == "nein":
+			i = i + 1
+		else:
+			print("Please state 'y' or 'n' or 'ja' or 'nein'.")
+		print(hits)
+	exists()
 	with open("marklist.csv", "a") as f:
-		f.write(name + " hits=" + str(hits) + " on distance=" + str(distance) + " equals final mark " + str(finalmark) + '\n')
+		f.write(name + "," + str(hits) + "," + str(finalmark) + '\n')
 	print("End program.")
 
 
